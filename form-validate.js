@@ -253,15 +253,11 @@
                             if (response.status == 'success') {
                                 form.reset();
                                 $('#fintech_queries_form').hide();
-                                $('#form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-white">Thanks for your interest in Fintech Foundations Program. Someone from our office will get back to you soon.
-
-</p>');
+                                $('#form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-white">Thanks for your interest in Fintech Foundations Program. Someone from our office will get back to you soon.</p>');
                             } else if (response.status == 'brochure') {
                                form.reset();
                                $('#brochure_form').hide();
-                               $('#brochure_form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-success">Thanks for your interest in Fintech Foundations Program. Someone from our office will get back to you soon.
-
-</p>');
+                               $('#brochure_form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-success">Thanks for your interest in Fintech Foundations Program. Someone from our office will get back to you soon.</p>');
                                var modifiedUrl = base_url.replace(/^\/+/, '');
                                var filePath = modifiedUrl + 'site/assets/pdf/GIFTIFI-Brochure-May2025.pdf';
                                var link = $('<a>', {
