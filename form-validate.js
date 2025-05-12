@@ -144,7 +144,7 @@
         });
 });
 
-       $(".fintech-queries-form").each(function () {
+$(".fintech-queries-form").each(function () {
          $(this).validate({
             errorElement: 'div',
             errorClass: 'error_form',
