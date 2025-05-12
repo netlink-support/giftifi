@@ -119,10 +119,10 @@
                                $('#brochure_form').hide();
                                $('#brochure_form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-success">Thanks for your interest in GIFT IFI Programmes. Someone from our office will get back to you soon.</p>');
                                var modifiedUrl = base_url.replace(/^\/+/, '');
-                               var filePath = modifiedUrl + 'site/assets/pdf/Brochure-GIFT-IFI-2024.pdf';
+                               var filePath = modifiedUrl + 'site/assets/pdf/GIFTIFI-Brochure-May2025.pdf';
                                var link = $('<a>', {
                                 href: filePath,
-                                download: 'Brochure-GIFT-IFI-2024.pdf',
+                                download: 'GIFTIFI-Brochure-May2025.pdf',
                                 style: 'display:none'  
                             });
                                $('body').append(link);
