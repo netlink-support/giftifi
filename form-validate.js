@@ -121,6 +121,10 @@
                                var modifiedUrl = base_url.replace(/^\/+/, '');
                                var live_file_path = $("#brochure_url_link").val();
                                var live_file_path_name = live_file_path?.split("/").reverse()[0];
+
+                               console.log(live_file_path);
+                               console.log(live_file_path_name);
+                               
                                var filePath = live_file_path?.length > 0 ? live_file_path : modifiedUrl + 'site/assets/pdf/GIFTIFI-Brochure-May2025.pdf';
                                var link = $('<a>', {
                                 href: filePath,
