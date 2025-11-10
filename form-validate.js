@@ -119,10 +119,12 @@
                                $('#brochure_form').hide();
                                $('#brochure_form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-success">Thanks for your interest in GIFT IFI Programmes. Someone from our office will get back to you soon.</p>');
                                var modifiedUrl = base_url.replace(/^\/+/, '');
-                               var filePath = modifiedUrl + 'site/assets/pdf/GIFTIFI-Brochure-May2025.pdf';
+                               var live_file_path = $("#brochure_url_link").val();
+                               var live_file_path_name = live_file_path?.split("/").reverse()[0];
+                               var filePath = live_file_path?.length > 0 ? live_file_path : modifiedUrl + 'site/assets/pdf/GIFTIFI-Brochure-May2025.pdf';
                                var link = $('<a>', {
                                 href: filePath,
-                                download: 'GIFTIFI-Brochure-May2025.pdf',
+                                download: live_file_path_name?.length > 0 ? live_file_path_name : 'GIFTIFI-Brochure-May2025.pdf',
                                 style: 'display:none'  
                             });
                                $('body').append(link);
