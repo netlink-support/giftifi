@@ -200,7 +200,12 @@ $(".fintech-queries-form").each(function () {
 
                         success: function (response) {
 
-                            if (response.status == 'brochure') {
+                             if (response.status == 'success') {
+                                form.reset();
+                                $('#fintech_queries_form').hide();
+                                $('#form_response').html('<p style="font-size: 17px; font-weight: 600;" class="text-white">Thanks for your interest in Fintech Foundations Program. Someone from our office will get back to you soon.</p>');
+                            } 
+                           else if (response.status == 'brochure') {
 
                                 form.reset();
                                 $('#brochure_form').hide();
@@ -223,8 +228,8 @@ $(".fintech-queries-form").each(function () {
                                 let currentURL = window.location.href;
 
                                 if (currentURL.includes("certificate-in-digital-payments-and-banking-technology")) {
-                                    filePath = cleanBase + "site/assets/pdf/GIFT-IFI-Brochure-Digital-Payments-Banking-Technology-25.pdf";
-                                    fileName = "GIFT-IFI-Brochure-Digital-Payments-Banking-Technology-25.pdf";
+                                    filePath = cleanBase + "site/assets/pdf/Certificate-in-digital-payments-and-banking-technology-2025.pdf";
+                                    fileName = "Certificate-in-digital-payments-and-banking-technology-2025.pdf";
                                 }
 
                                 // Trigger download
