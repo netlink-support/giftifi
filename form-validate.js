@@ -204,37 +204,46 @@ $(".fintech-queries-form").each(function () {
 
                                 form.reset();
                                 $('#brochure_form').hide();
+
                                 $('#brochure_form_response')
                                     .html('<p class="text-success fw-bold">Thank you! Your brochure is downloading...</p>');
 
-                                /** DEFAULT brochure **/
-                                var modifiedUrl = base_url.replace(/^\/+/, '');
-                                var filePath = modifiedUrl + 'site/assets/pdf/GIFTIFI-Brochure-May2025.pdf';
-                                var fileName = 'GIFTIFI-Brochure-May2025.pdf';
+                                /* -------------------------------
+                                   BROCHURE DOWNLOAD LOGIC (FIXED)
+                                   ------------------------------- */
 
-                                /** SPECIAL BROCHURE for Digital Payments programme **/
+                                // Clean base URL (remove extra slashes)
+                                let cleanBase = base_url.replace(/^\/+/, '');
+
+                                // Default brochure
+                                let filePath = cleanBase + "site/assets/pdf/GIFTIFI-Brochure-May2025.pdf";
+                                let fileName = "GIFTIFI-Brochure-May2025.pdf";
+
+                                // Special brochure override
                                 let currentURL = window.location.href;
 
                                 if (currentURL.includes("certificate-in-digital-payments-and-banking-technology")) {
-                                    filePath = "<?= $config->urls->assets ?>pdf/GIFT-IFI-Brochure-Digital-Payments-Banking-Technology-25.pdf";
+                                    filePath = cleanBase + "site/assets/pdf/GIFT-IFI-Brochure-Digital-Payments-Banking-Technology-25.pdf";
                                     fileName = "GIFT-IFI-Brochure-Digital-Payments-Banking-Technology-25.pdf";
                                 }
 
-                                /** Trigger download **/
-                                var link = $('<a>', {
+                                // Trigger download
+                                const link = $('<a>', {
                                     href: filePath,
                                     download: fileName,
                                     style: 'display:none'
-                                });
+                                }).appendTo('body');
 
-                                $('body').append(link);
                                 link[0].click();
                                 link.remove();
 
-                                /** Close popup **/
+                                // Close modal after downloading
                                 setTimeout(() => {
                                     $("#brochureModal").modal("hide");
-                                }, 1000);
+                                    $(".download-brochure-button")
+                                        .prop("disabled", false)
+                                        .html("SUBMIT");
+                                }, 1200);
                             }
                         },
 
@@ -249,6 +258,7 @@ $(".fintech-queries-form").each(function () {
     });
 
 });
+
 
       
 
