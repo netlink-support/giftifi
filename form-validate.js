@@ -228,8 +228,8 @@ $(".fintech-queries-form").each(function () {
                                 let currentURL = window.location.href;
 
                                 if (currentURL.includes("certificate-in-digital-payments-and-banking-technology")) {
-                                    filePath = cleanBase + "site/assets/pdf/Certificate-in-digital-payments-and-banking-technology-2025.pdf";
-                                    fileName = "Certificate-in-digital-payments-and-banking-technology-2025.pdf";
+                                    filePath = cleanBase + "site/assets/pdf/Professional-Certificate-in-Digital-Payments-and-Banking-Technology-Brochure.pdf";
+                                    fileName = "Professional-Certificate-in-Digital-Payments-and-Banking-Technology-Brochure.pdf";
                                 }
 
                                 // Trigger download
