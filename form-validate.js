@@ -264,26 +264,26 @@ $(".fintech-queries-form").each(function () {
 
 });
 
-   $('#exampleModal').on('hidden.bs.modal', function () {
+$('#exampleModal').on('hidden.bs.modal', function () {
 
     // Clear thank-you message
     $('#brochure_form_response').html('');
 
-    // Show form again
-    $('#brochure_form').show();
-
-    // Reset form fields
-    $('#brochure_form')[0].reset();
+    // Reset & show form
+    const form = $('#brochure_form');
+    form[0].reset();
+    form.show();
 
     // Remove validation errors
-    $('#brochure_form')
-        .find('.is-invalid')
-        .removeClass('is-invalid');
+    form.find('.is-invalid').removeClass('is-invalid');
+    form.find('.error_form').remove();
 
-    $('#brochure_form')
-        .find('.error_form')
-        .remove();
+    //  RESET SUBMIT BUTTON PROPERLY
+    const btn = form.find('.download-brochure-button');
+    btn.prop('disabled', false);
+    btn.html('Submit'); // EXACT original text
 });
+
 
       
 
