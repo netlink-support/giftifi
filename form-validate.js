@@ -264,6 +264,26 @@ $(".fintech-queries-form").each(function () {
 
 });
 
+   $('#exampleModal').on('hidden.bs.modal', function () {
+
+    // Clear thank-you message
+    $('#brochure_form_response').html('');
+
+    // Show form again
+    $('#brochure_form').show();
+
+    // Reset form fields
+    $('#brochure_form')[0].reset();
+
+    // Remove validation errors
+    $('#brochure_form')
+        .find('.is-invalid')
+        .removeClass('is-invalid');
+
+    $('#brochure_form')
+        .find('.error_form')
+        .remove();
+});
 
       
 
